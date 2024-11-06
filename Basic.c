@@ -316,31 +316,201 @@ int main()
 
 
 // J. Count Letters
+/* 
+#include <stdio.h>
+#include <string.h>
 
-// #include <stdio.h>
-// #include <string.h>
+int main()
+{
+    char s[1000000];
+    scanf("%s", s);
 
-// int main()
-// {
-//     char s[1000000];
-//     scanf("%s", s);
+    int length = strlen(s);
+    int f[26] = {0};
 
-//     int length = strlen(s);
-//     int f[26] = {0};
+    for (int i = 0; i < length; i++)
+    {
+        char ch = s[i] ;
+        // printf("%c \n", ch);
+        int index = ch - 'a';
+        f[index]+=1;
+    }
 
-//     for (int i = 0; i < length; i++)
-//     {
-//         char ch = s[i] ;
-//         int index = ch - 'a';
-//         f[index]+=1;
-//     }
+    for (int i = 0; i < 26; i++)
+    {
+        // printf("%d \n", f[i]);
+        if (f[i] >0)
+        {
+            printf("%c : %d \n", i + 'a', f[i]);
+        }
+    }
+    return 0;
+}
 
-//     for (int i = 0; i < 26; i++)
-//     {
-//         if (f[i] >0)
-//         {
-//             printf("%c : %d \n", i + 'a', f[i]);
-//         }
-//     }
-//     return 0;
-// }
+ */
+
+/* 
+
+//Problem One Assignment
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int m[n][n];
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &m[i][j]);
+        }
+    }
+
+    int flag = 1;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i == j) {
+                if (m[i][j] != 1) {
+                    flag = 0;
+                    break;
+                }
+            } else {
+                if (m[i][j] != 0) {
+                    flag = 0;
+                    break;
+                }
+            }
+        }
+        if (flag == 0) {
+            break;
+        }
+    }
+
+    if (flag == 1) {
+        printf("YES\n"); 
+    } else {
+        printf("NO\n");   
+    }
+
+    return 0;
+}
+
+ */
+
+/* 
+//problem two Assignment
+
+#include <stdio.h>
+
+int main() {
+    int n, m, x;
+    scanf("%d %d %d", &n, &m, &x);
+
+    int matrix[n][m];
+    int count[1001] = {0}; 
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            int element;
+            scanf("%d", &element);
+            matrix[i][j] = element;
+            count[element]++; 
+        }
+    }
+
+    for (int i = 0; i < x; i++) {
+        int number;
+        scanf("%d", &number);
+        printf("%d\n", count[number]);  
+    }
+    return 0;
+}
+
+ */
+/* 
+
+//problem 3 assignment
+#include <stdio.h>
+
+
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+  
+
+    int arr[n];
+    int f[100000] = {0}; 
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        f[arr[i]]++;  
+    }
+
+    int unique = 0;
+    for (int i = 0; i <= 100000; i++) {
+        if (f[i] == 1) {
+            unique++;
+        }
+    }
+
+    printf("%d\n", unique); 
+
+    return 0;
+}
+
+ */
+
+
+/* 
+// problem four assignment
+
+#include <stdio.h>
+#include <stdlib.h>  
+
+int main() {
+    int N;
+    scanf("%d", &N); 
+    int *arr = (int *)malloc(sizeof(int)); 
+
+    for (int i = 0; i < N; i++) {
+        int num;
+        scanf("%d", &num);  
+        arr = (int *)realloc(arr, (i + 1) * sizeof(int));
+        arr[i] = num;
+    }
+    for (int i = 0; i < N; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    free(arr);
+
+    return 0;
+}
+
+ */
+
+/* 
+
+// problem 5 assignment
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int A, B;
+    int *p = &A, *q = &B;  
+    
+
+    scanf("%d %d", p, q);
+    
+
+    int diff = abs(*p - *q);
+    
+    printf("%d\n", diff);
+
+    return 0;
+}
+
+ */
